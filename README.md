@@ -44,6 +44,34 @@ ubuntu-cloudimage-removed-keys.gpg       | related-crypto-material   | N/A      
 ubuntu-master-keyring.gpg                | related-crypto-material   | RSA-4096        | No         | apt             | No          
 ```
 
+#### Example Output (Filtering for ECC):
+```bash
+./parse_cbom.py -a ECC -f tomcat_bom.json
+```
+```text
+COMPONENT NAME                           | ASSET TYPE                | PRIMITIVE       | PQC SAFE   | TRUST STORE     | PUBLIC ROOT 
+--------------------------------------------------------------------------------------------------------------------------------
+AffirmTrust Premium ECC                  | certificate               | ECDSA           | No         | ca-store        | Yes         
+Atos TrustedRoot Root CA ECC TLS 2021    | certificate               | ECDSA           | No         | ca-store        | Yes         
+COMODO ECC Certification Authority       | certificate               | ECDSA           | No         | ca-store        | Yes         
+CommScope Public Trust ECC Root-01       | certificate               | ECDSA           | No         | ca-store        | Yes         
+CommScope Public Trust ECC Root-02       | certificate               | ECDSA           | No         | ca-store        | Yes         
+DigiCert TLS ECC P384 Root G5            | certificate               | ECDSA           | No         | ca-store        | Yes         
+HARICA TLS ECC Root CA 2021              | certificate               | ECDSA           | No         | ca-store        | Yes         
+Hellenic Academic and Research Ins...    | certificate               | ECDSA           | No         | ca-store        | Yes         
+Microsoft ECC Root Certificate Aut...    | certificate               | ECDSA           | No         | ca-store        | Yes         
+SSL.com EV Root Certification Auth...    | certificate               | ECDSA           | No         | ca-store        | Yes         
+SSL.com Root Certification Authori...    | certificate               | ECDSA           | No         | ca-store        | Yes         
+SSL.com TLS ECC Root CA 2022             | certificate               | ECDSA           | No         | ca-store        | Yes         
+Security Communication ECC RootCA1       | certificate               | ECDSA           | No         | ca-store        | Yes         
+Trustwave Global ECC P256 Certific...    | certificate               | ECDSA           | No         | ca-store        | Yes         
+Trustwave Global ECC P384 Certific...    | certificate               | ECDSA           | No         | ca-store        | Yes         
+USERTrust ECC Certification Authority    | certificate               | ECDSA           | No         | ca-store        | Yes         
+emSign ECC Root CA - C3                  | certificate               | ECDSA           | No         | ca-store        | Yes         
+emSign ECC Root CA - G3                  | certificate               | ECDSA           | No         | ca-store        | Yes         
+vTrus ECC Root CA                        | certificate               | ECDSA           | No         | ca-store        | Yes         
+```
+
 ### 2. `parse_gpg.py`
 A lightweight script that interfaces directly with GnuPG's machine-readable output (`--with-colons`) to identify the exact cryptographic primitives used for both master keys and subkeys (e.g., `RSA-4096`, `ed25519`).
 
