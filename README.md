@@ -24,6 +24,26 @@ A Python script designed to parse CycloneDX CBoM JSON files and extract relevant
 ./parse_cbom.py -t certificate
 ```
 
+#### Example Output:
+```text
+COMPONENT NAME                           | ASSET TYPE                | PRIMITIVE       | PQC SAFE   | TRUST STORE     | PUBLIC ROOT 
+--------------------------------------------------------------------------------------------------------------------------------
+ubuntu-archive-keyring.gpg               | certificate               | unknown         | Unknown    | N/A             | No          
+ubuntu-archive-removed-keys.gpg          | certificate               | unknown         | Unknown    | N/A             | No          
+ubuntu-cloudimage-keyring.gpg            | certificate               | unknown         | Unknown    | N/A             | No          
+ubuntu-cloudimage-removed-keys.gpg       | certificate               | unknown         | Unknown    | N/A             | No          
+ubuntu-keyring-2012-cdimage.gpg          | certificate               | unknown         | Unknown    | N/A             | No          
+ubuntu-keyring-2018-archive.gpg          | certificate               | unknown         | Unknown    | N/A             | No          
+ubuntu-master-keyring.gpg                | certificate               | unknown         | Unknown    | N/A             | No          
+ubuntu-keyring-2012-cdimage.gpg          | related-crypto-material   | RSA-4096        | No         | apt             | No          
+ubuntu-keyring-2018-archive.gpg          | related-crypto-material   | RSA-4096        | No         | apt             | No          
+ubuntu-archive-keyring.gpg               | related-crypto-material   | RSA-4096        | No         | apt             | No          
+ubuntu-archive-removed-keys.gpg          | related-crypto-material   | DSA-1024        | No         | apt             | No          
+ubuntu-cloudimage-keyring.gpg            | related-crypto-material   | RSA-4096        | No         | apt             | No          
+ubuntu-cloudimage-removed-keys.gpg       | related-crypto-material   | N/A             | Unknown    | apt             | No          
+ubuntu-master-keyring.gpg                | related-crypto-material   | RSA-4096        | No         | apt             | No          
+```
+
 ### 2. `parse_gpg.py`
 A lightweight script that interfaces directly with GnuPG's machine-readable output (`--with-colons`) to identify the exact cryptographic primitives used for both master keys and subkeys (e.g., `RSA-4096`, `ed25519`).
 
