@@ -88,7 +88,7 @@ A lightweight script that interfaces directly with GnuPG's machine-readable outp
 ```
 
 ### 3. `demo.sh`
-A bash script that orchestrates the generation of a CBoM from a Docker container image using `cdxgen` and demonstrates parsing it dynamically with `jq`.
+A bash script that orchestrates the generation of a CBoM from a Docker container image using `cdxgen` and demonstrates parsing it dynamically with `jq`. It also features an interactive extraction mode.
 
 #### Usage:
 ```bash
@@ -97,6 +97,9 @@ A bash script that orchestrates the generation of a CBoM from a Docker container
 
 # Run against a specific image
 ./demo.sh ubuntu:latest
+
+# Run interactively to extract a certificate from the container
+./demo.sh -e tomcat:latest
 ```
 
 ## Features
