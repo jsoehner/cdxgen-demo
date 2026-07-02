@@ -130,3 +130,12 @@ docker rm "$CONTAINER" >/dev/null
 # 4. Parse and display the certificate values
 openssl x509 -in "./$ARTIFACT" -text -noout
 ```
+
+## Gotchas
+
+When working with CBoMs and these utilities, keep the following in mind:
+
+1. **Unpredictable CBoM Filenames**: CBoM files do not have a rigidly enforced naming convention (e.g., they aren't always named `bom.json` or `*_bom.json`). When scanning a repository or container for existing CBoMs, do not rely on filenames. Instead, dynamically search for files containing the `"cryptoProperties"` JSON attribute, which is a reliable indicator of CBoM data.
+2. **Missing Dependencies (`cdxgen`)**: If `cdxgen` is not installed globally on your system, running it directly will fail. It is recommended to use `npx -y @cyclonedx/cdxgen` to guarantee it runs smoothly without manual installation.
+3. **Extraction Mode Requires Docker**: The interactive certificate extraction feature in `demo.sh` relies on `docker create` and `docker cp`. This means a local Docker daemon must be running and accessible to the user executing the script.
+4. **JSON Formatting Issues**: Ensure that any injected algorithms or manual modifications (such as those performed by `inject_algo.py`) maintain valid JSON structure, or `parse_cbom.py` will fail to parse the file.

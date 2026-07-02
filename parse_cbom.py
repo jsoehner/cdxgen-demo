@@ -2,8 +2,9 @@
 import json
 import argparse
 import sys
+import csv
 
-def parse_cbom(bom_file, asset_types, exclude_asset_types, algorithms):
+def parse_cbom(bom_file, asset_types, exclude_asset_types, algorithms, exclude_roots=False):
     try:
         with open(bom_file, 'r') as f:
             bom = json.load(f)
@@ -74,6 +75,9 @@ def parse_cbom(bom_file, asset_types, exclude_asset_types, algorithms):
             elif name_prop == "cdx:crypto:isCA" and str(val_prop).lower() == "true":
                 public_root = "Yes"
 
+        if exclude_roots and public_root == "Yes":
+            continue
+
         # 5. Check if it's PQC-Safe
         pqc_safe = "Unknown"
         pqc_keywords = ["kyber", "dilithium", "falcon", "sphincs", "ml-kem", "ml-dsa", "slh-dsa", "mceliece", "ntru", "saber", "frodokem", "bike", "hqc", "lms", "xmss"]
@@ -119,13 +123,26 @@ def main():
                         help="Exclude specific crypto asset types. Can be specified multiple times.")
     parser.add_argument("-a", "--algorithm", action="append", 
                         help="Filter by specific algorithm name or primitive (e.g., 'RSA', 'ECC'). Can be specified multiple times.")
+    parser.add_argument("--exclude-roots", action="store_true",
+                        help="Exclude public root certificates from the output.")
+    parser.add_argument("--format", choices=["table", "csv", "json"], default="table",
+                        help="Output format (default: table)")
     
     args = parser.parse_args()
     
-    results = parse_cbom(args.file, args.asset_type, args.exclude_asset_type, args.algorithm)
+    results = parse_cbom(args.file, args.asset_type, args.exclude_asset_type, args.algorithm, args.exclude_roots)
     
     if not results:
         print(f"No cryptographic assets found matching the given filters in '{args.file}'.")
+        return
+
+    if args.format == "json":
+        print(json.dumps(results, indent=2))
+        return
+    elif args.format == "csv":
+        writer = csv.DictWriter(sys.stdout, fieldnames=["name", "asset_type", "primitive", "pqc_safe", "trust_store", "public_root"])
+        writer.writeheader()
+        writer.writerows(results)
         return
 
     # Print results as a formatted table

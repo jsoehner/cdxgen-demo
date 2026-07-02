@@ -24,9 +24,19 @@ echo "Output File  : $BOM_FILE"
 echo "========================================================"
 echo ""
 
-# Check if jq is installed
+# Check if dependencies are installed
 if ! command -v jq &> /dev/null; then
     echo "Error: jq is not installed. Please install jq to run this demo."
+    exit 1
+fi
+
+if ! command -v npx &> /dev/null; then
+    echo "Error: npx (npm) is not installed. Please install Node.js to run cdxgen."
+    exit 1
+fi
+
+if [ "$EXTRACT_MODE" -eq 1 ] && ! command -v docker &> /dev/null; then
+    echo "Error: docker is not installed. Please install Docker for extraction mode."
     exit 1
 fi
 
@@ -97,3 +107,56 @@ if [ "$EXTRACT_MODE" -eq 1 ]; then
         fi
     done
 fi
+
+echo ""
+echo "[Step 4] Exploring Cryptographic Bill of Material Examples..."
+echo "Scanning for all CBoM examples across files and components in the current scope..."
+
+# Find all JSON files and check if they contain 'cryptoProperties'
+cbom_files=$(find . -type f -name "*.json" -exec grep -l '"cryptoProperties"' {} + 2>/dev/null)
+
+for example_bom in $cbom_files; do
+    # Remove leading ./ for cleaner output if present
+    clean_name=${example_bom#./}
+    
+    if [ "$clean_name" != "bom.json" ]; then
+        echo ""
+        echo "========================================================"
+        echo " Analyzing Example: $clean_name"
+        echo "========================================================"
+        python3 ./parse_cbom.py -f "$example_bom" | head -n 15
+        echo "    (Output truncated for brevity. Run 'python3 parse_cbom.py -f $clean_name' to see all)"
+    fi
+done
+
+echo ""
+echo "[Step 5] Demonstrating Advanced Filtering..."
+if [ -f "tomcat_bom.json" ]; then
+    echo "Filtering tomcat_bom.json for 'RSA' algorithms only:"
+    python3 ./parse_cbom.py -f "tomcat_bom.json" -a RSA | head -n 15
+else
+    echo "(Skipped: tomcat_bom.json not found)"
+fi
+
+echo ""
+echo "[Step 6] Demonstrating Vulnerable Algorithm Injection..."
+if [ -f "inject_algo.py" ] && [ -f "tomcat_bom.json" ]; then
+    echo "Injecting a vulnerable algorithm into tomcat_bom.json to create tomcat_demo_bom.json..."
+    python3 ./inject_algo.py
+    echo "Parsing the injected CBoM for 'RSA':"
+    python3 ./parse_cbom.py -f "tomcat_demo_bom.json" -a RSA | head -n 15
+else
+    echo "(Skipped: inject_algo.py or tomcat_bom.json not found)"
+fi
+
+echo ""
+echo "[Step 7] Demonstrating GPG Key Parsing..."
+if [ -f "parse_gpg.py" ]; then
+    echo "Running parse_gpg.py to analyze local GPG keys (if any):"
+    python3 ./parse_gpg.py || echo "(GPG command failed or no keys found)"
+else
+    echo "(Skipped: parse_gpg.py not found)"
+fi
+
+echo ""
+echo "Demo complete!"
