@@ -41,6 +41,7 @@ jobs:
 
   container-vulnerability-scan:
     runs-on: ubuntu-latest
+    if: hashFiles('Dockerfile') != ''
     permissions:
       contents: read
       security-events: write
