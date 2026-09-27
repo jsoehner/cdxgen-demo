@@ -1,0 +1,314 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "total_components": 85,
+  "total_crypto_assets": 14,
+  "quantum_vulnerable_count": 5,
+  "pqc_ready_count": 3,
+  "symmetric_count": 6,
+  "pqc_migration_percentage": 37.5,
+  "asset_types": {
+    "algorithm": 14
+  },
+  "algorithm_distribution": {
+    "ML": 2,
+    "SLH": 1,
+    "Stateful": 1,
+    "RSA": 1,
+    "ECDSA": 1,
+    "ECDH": 1,
+    "Ed25519": 1,
+    "Diffie": 1,
+    "AES": 1,
+    "SHA": 3,
+    "ChaCha20": 1
+  },
+  "vulnerable_assets": [
+    {
+      "name": "RSA-2048",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "RSA",
+      "primitive": "signature",
+      "key_length": "2048",
+      "pqc_status": "QUANTUM-VULNERABLE"
+    },
+    {
+      "name": "ECDSA-P256",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "ECDSA",
+      "primitive": "signature",
+      "key_length": "secp256r1",
+      "pqc_status": "QUANTUM-VULNERABLE"
+    },
+    {
+      "name": "ECDH-X25519",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "ECDH",
+      "primitive": "key-agreement",
+      "key_length": "25519",
+      "pqc_status": "QUANTUM-VULNERABLE"
+    },
+    {
+      "name": "Ed25519",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "Ed25519",
+      "primitive": "signature",
+      "key_length": "25519",
+      "pqc_status": "QUANTUM-VULNERABLE"
+    },
+    {
+      "name": "Diffie-Hellman",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "Diffie",
+      "primitive": "key-agreement",
+      "key_length": "N/A",
+      "pqc_status": "QUANTUM-VULNERABLE"
+    }
+  ],
+  "pqc_assets": [
+    {
+      "name": "ML-KEM-768",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "ML",
+      "primitive": "kem",
+      "key_length": "N/A",
+      "pqc_status": "POST-QUANTUM READY"
+    },
+    {
+      "name": "ML-DSA-65",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "ML",
+      "primitive": "signature",
+      "key_length": "N/A",
+      "pqc_status": "POST-QUANTUM READY"
+    },
+    {
+      "name": "SLH-DSA",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "SLH",
+      "primitive": "signature",
+      "key_length": "N/A",
+      "pqc_status": "POST-QUANTUM READY"
+    }
+  ],
+  "symmetric_assets": [
+    {
+      "name": "Stateful-Hash-Signature",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "Stateful",
+      "primitive": "signature",
+      "key_length": "N/A",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    },
+    {
+      "name": "AES-256-GCM",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "AES",
+      "primitive": "block-cipher",
+      "key_length": "256",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    },
+    {
+      "name": "SHA-256",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "SHA",
+      "primitive": "hash",
+      "key_length": "256",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    },
+    {
+      "name": "SHA-384",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "SHA",
+      "primitive": "hash",
+      "key_length": "384",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    },
+    {
+      "name": "ChaCha20-Poly1305",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "ChaCha20",
+      "primitive": "stream-cipher",
+      "key_length": "256",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    },
+    {
+      "name": "SHA-512",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "SHA",
+      "primitive": "hash",
+      "key_length": "512",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    }
+  ],
+  "crypto_assets": [
+    {
+      "name": "ML-KEM-768",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "ML",
+      "primitive": "kem",
+      "key_length": "N/A",
+      "pqc_status": "POST-QUANTUM READY"
+    },
+    {
+      "name": "ML-DSA-65",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "ML",
+      "primitive": "signature",
+      "key_length": "N/A",
+      "pqc_status": "POST-QUANTUM READY"
+    },
+    {
+      "name": "SLH-DSA",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "SLH",
+      "primitive": "signature",
+      "key_length": "N/A",
+      "pqc_status": "POST-QUANTUM READY"
+    },
+    {
+      "name": "Stateful-Hash-Signature",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "Stateful",
+      "primitive": "signature",
+      "key_length": "N/A",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    },
+    {
+      "name": "RSA-2048",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "RSA",
+      "primitive": "signature",
+      "key_length": "2048",
+      "pqc_status": "QUANTUM-VULNERABLE"
+    },
+    {
+      "name": "ECDSA-P256",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "ECDSA",
+      "primitive": "signature",
+      "key_length": "secp256r1",
+      "pqc_status": "QUANTUM-VULNERABLE"
+    },
+    {
+      "name": "ECDH-X25519",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "ECDH",
+      "primitive": "key-agreement",
+      "key_length": "25519",
+      "pqc_status": "QUANTUM-VULNERABLE"
+    },
+    {
+      "name": "Ed25519",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "Ed25519",
+      "primitive": "signature",
+      "key_length": "25519",
+      "pqc_status": "QUANTUM-VULNERABLE"
+    },
+    {
+      "name": "Diffie-Hellman",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "Diffie",
+      "primitive": "key-agreement",
+      "key_length": "N/A",
+      "pqc_status": "QUANTUM-VULNERABLE"
+    },
+    {
+      "name": "AES-256-GCM",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "AES",
+      "primitive": "block-cipher",
+      "key_length": "256",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    },
+    {
+      "name": "SHA-256",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "SHA",
+      "primitive": "hash",
+      "key_length": "256",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    },
+    {
+      "name": "SHA-384",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "SHA",
+      "primitive": "hash",
+      "key_length": "384",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    },
+    {
+      "name": "ChaCha20-Poly1305",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "ChaCha20",
+      "primitive": "stream-cipher",
+      "key_length": "256",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    },
+    {
+      "name": "SHA-512",
+      "version": "N/A",
+      "type": "cryptographic-asset",
+      "asset_type": "algorithm",
+      "algorithm": "SHA",
+      "primitive": "hash",
+      "key_length": "512",
+      "pqc_status": "CLASSICAL/SYMMETRIC"
+    }
+  ]
+}
