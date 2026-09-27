@@ -1,0 +1,832 @@
+[
+  {
+    "file": "parse_cbom.py",
+    "line": 83,
+    "snippet": "pqc_keywords = [\"kyber\", \"dilithium\", \"falcon\", \"sphincs\", \"ml-kem\", \"ml-dsa\", \"slh-dsa\", \"mceliece\", \"ntru\", \"saber\", \"",
+    "name": "ML-KEM-768",
+    "primitive": "kem",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 203"
+  },
+  {
+    "file": "parse_cbom.py",
+    "line": 83,
+    "snippet": "pqc_keywords = [\"kyber\", \"dilithium\", \"falcon\", \"sphincs\", \"ml-kem\", \"ml-dsa\", \"slh-dsa\", \"mceliece\", \"ntru\", \"saber\", \"",
+    "name": "ML-DSA-65",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 204"
+  },
+  {
+    "file": "parse_cbom.py",
+    "line": 83,
+    "snippet": "pqc_keywords = [\"kyber\", \"dilithium\", \"falcon\", \"sphincs\", \"ml-kem\", \"ml-dsa\", \"slh-dsa\", \"mceliece\", \"ntru\", \"saber\", \"",
+    "name": "SLH-DSA",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 205"
+  },
+  {
+    "file": "parse_cbom.py",
+    "line": 83,
+    "snippet": "pqc_keywords = [\"kyber\", \"dilithium\", \"falcon\", \"sphincs\", \"ml-kem\", \"ml-dsa\", \"slh-dsa\", \"mceliece\", \"ntru\", \"saber\", \"",
+    "name": "Stateful-Hash-Signature",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "RFC 8554/8391"
+  },
+  {
+    "file": "parse_cbom.py",
+    "line": 84,
+    "snippet": "vulnerable_keywords = [\"rsa\", \"dsa\", \"ecc\", \"ecdh\", \"ecdsa\", \"eddsa\", \"dh\", \"diffie-hellman\", \"ed25519\", \"x25519\", \"curv",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_cbom.py",
+    "line": 84,
+    "snippet": "vulnerable_keywords = [\"rsa\", \"dsa\", \"ecc\", \"ecdh\", \"ecdsa\", \"eddsa\", \"dh\", \"diffie-hellman\", \"ed25519\", \"x25519\", \"curv",
+    "name": "ECDSA-P256",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "secp256r1",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_cbom.py",
+    "line": 84,
+    "snippet": "vulnerable_keywords = [\"rsa\", \"dsa\", \"ecc\", \"ecdh\", \"ecdsa\", \"eddsa\", \"dh\", \"diffie-hellman\", \"ed25519\", \"x25519\", \"curv",
+    "name": "ECDH-X25519",
+    "primitive": "key-agreement",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "25519",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_cbom.py",
+    "line": 84,
+    "snippet": "vulnerable_keywords = [\"rsa\", \"dsa\", \"ecc\", \"ecdh\", \"ecdsa\", \"eddsa\", \"dh\", \"diffie-hellman\", \"ed25519\", \"x25519\", \"curv",
+    "name": "Ed25519",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "25519",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_cbom.py",
+    "line": 84,
+    "snippet": "vulnerable_keywords = [\"rsa\", \"dsa\", \"ecc\", \"ecdh\", \"ecdsa\", \"eddsa\", \"dh\", \"diffie-hellman\", \"ed25519\", \"x25519\", \"curv",
+    "name": "Diffie-Hellman",
+    "primitive": "key-agreement",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "N/A",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_cbom.py",
+    "line": 113,
+    "snippet": "\"  ./parse_cbom.py -t algorithm -a RSA -a ECC\\n\"",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_cbom.py",
+    "line": 125,
+    "snippet": "help=\"Filter by specific algorithm name or primitive (e.g., 'RSA', 'ECC'). Can be specified multiple times.\")",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "inject_algo.py",
+    "line": 20,
+    "snippet": "\"name\": \"RSA\",",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_gpg.py",
+    "line": 7,
+    "snippet": "\"1\": \"RSA\",",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_gpg.py",
+    "line": 8,
+    "snippet": "\"2\": \"RSA (Encrypt Only)\",",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_gpg.py",
+    "line": 9,
+    "snippet": "\"3\": \"RSA (Sign Only)\",",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_gpg.py",
+    "line": 12,
+    "snippet": "\"18\": \"ECDH\",",
+    "name": "ECDH-X25519",
+    "primitive": "key-agreement",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "25519",
+    "standard": "Classical"
+  },
+  {
+    "file": "parse_gpg.py",
+    "line": 13,
+    "snippet": "\"19\": \"ECDSA\",",
+    "name": "ECDSA-P256",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "secp256r1",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 6,
+    "snippet": "- ML-KEM-768 (NIST FIPS 203 / Crystals-Kyber): Quantum-resistant key encapsulation.",
+    "name": "ML-KEM-768",
+    "primitive": "kem",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 203"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 7,
+    "snippet": "- ML-DSA-65 (NIST FIPS 204 / Crystals-Dilithium): Quantum-resistant digital signatures.",
+    "name": "ML-DSA-65",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 204"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 9,
+    "snippet": "- RSA-2048: Legacy client auth and backward-compatible certificate validation.",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 10,
+    "snippet": "- ECDSA-P256 (secp256r1): Legacy mobile device signature verification.",
+    "name": "ECDSA-P256",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "secp256r1",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 11,
+    "snippet": "- ECDH-X25519: Classical key exchange component in hybrid mode.",
+    "name": "ECDH-X25519",
+    "primitive": "key-agreement",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "25519",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 13,
+    "snippet": "- AES-256-GCM: Bulk payload symmetric encryption (Grover-safe).",
+    "name": "AES-256-GCM",
+    "primitive": "block-cipher",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 14,
+    "snippet": "- SHA-384 / SHA-256: Quantum-resistant cryptographic hashing.",
+    "name": "SHA-256",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 14,
+    "snippet": "- SHA-384 / SHA-256: Quantum-resistant cryptographic hashing.",
+    "name": "SHA-384",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "384",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 30,
+    "snippet": "self.kem_algorithm = \"ML-KEM-768\"",
+    "name": "ML-KEM-768",
+    "primitive": "kem",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 203"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 31,
+    "snippet": "self.dsa_algorithm = \"ML-DSA-65\"",
+    "name": "ML-DSA-65",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 204"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 36,
+    "snippet": "self.legacy_sig_algorithm = \"RSA-2048\"",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 37,
+    "snippet": "self.legacy_ecdsa_curve = \"ECDSA-P256\"",
+    "name": "ECDSA-P256",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "secp256r1",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 38,
+    "snippet": "self.legacy_ecdh_curve = \"X25519\"",
+    "name": "ECDH-X25519",
+    "primitive": "key-agreement",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "25519",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 41,
+    "snippet": "self.bulk_cipher = \"AES-256-GCM\"",
+    "name": "AES-256-GCM",
+    "primitive": "block-cipher",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 42,
+    "snippet": "self.hash_digest = \"SHA-384\"",
+    "name": "SHA-384",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "384",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 46,
+    "snippet": "Simulate hybrid key encapsulation combining ML-KEM-768 with classical ECDH-X25519.",
+    "name": "ML-KEM-768",
+    "primitive": "kem",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 203"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 46,
+    "snippet": "Simulate hybrid key encapsulation combining ML-KEM-768 with classical ECDH-X25519.",
+    "name": "ECDH-X25519",
+    "primitive": "key-agreement",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "25519",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 47,
+    "snippet": "Both shared secrets are hashed together using SHA-384 to derive the session key.",
+    "name": "SHA-384",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "384",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 50,
+    "snippet": "pqc_ciphertext = os.urandom(1088)  # ML-KEM-768 ciphertext length",
+    "name": "ML-KEM-768",
+    "primitive": "kem",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 203"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 58,
+    "snippet": "h = hashlib.sha384()",
+    "name": "SHA-384",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "384",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 61,
+    "snippet": "session_key = h.digest()[:32]  # 256-bit AES key",
+    "name": "AES-256-GCM",
+    "primitive": "block-cipher",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 74,
+    "snippet": "Dual-sign payload using ML-DSA-65 (Post-Quantum) and RSA-2048 (Legacy).",
+    "name": "ML-DSA-65",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 204"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 74,
+    "snippet": "Dual-sign payload using ML-DSA-65 (Post-Quantum) and RSA-2048 (Legacy).",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 77,
+    "snippet": "pqc_sig = os.urandom(3309)  # ML-DSA-65 signature length",
+    "name": "ML-DSA-65",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 204"
+  },
+  {
+    "file": "pqc_hybrid_service.py",
+    "line": 80,
+    "snippet": "legacy_sig = os.urandom(256)  # 2048-bit RSA signature",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "python_test/ssl_test.py",
+    "line": 3,
+    "snippet": "from cryptography.hazmat.primitives.asymmetric import rsa",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "python_test/ssl_test.py",
+    "line": 8,
+    "snippet": "context.set_ciphers('ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384')",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "python_test/ssl_test.py",
+    "line": 8,
+    "snippet": "context.set_ciphers('ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384')",
+    "name": "Diffie-Hellman",
+    "primitive": "key-agreement",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "N/A",
+    "standard": "Classical"
+  },
+  {
+    "file": "python_test/ssl_test.py",
+    "line": 8,
+    "snippet": "context.set_ciphers('ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384')",
+    "name": "AES-256-GCM",
+    "primitive": "block-cipher",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "python_test/ssl_test.py",
+    "line": 8,
+    "snippet": "context.set_ciphers('ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384')",
+    "name": "SHA-384",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "384",
+    "standard": "Classical"
+  },
+  {
+    "file": "python_test/ssl_test.py",
+    "line": 10,
+    "snippet": "private_key = rsa.generate_private_key(",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 30,
+    "snippet": "\"AES\", \"CHACHA20\", \"3DES\", \"DES\", \"BLOWFISH\", \"RC4\", \"SHA-256\", \"SHA-384\", \"SHA-512\", \"SHA-3\"",
+    "name": "AES-256-GCM",
+    "primitive": "block-cipher",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 30,
+    "snippet": "\"AES\", \"CHACHA20\", \"3DES\", \"DES\", \"BLOWFISH\", \"RC4\", \"SHA-256\", \"SHA-384\", \"SHA-512\", \"SHA-3\"",
+    "name": "ChaCha20-Poly1305",
+    "primitive": "stream-cipher",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 30,
+    "snippet": "\"AES\", \"CHACHA20\", \"3DES\", \"DES\", \"BLOWFISH\", \"RC4\", \"SHA-256\", \"SHA-384\", \"SHA-512\", \"SHA-3\"",
+    "name": "SHA-256",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 30,
+    "snippet": "\"AES\", \"CHACHA20\", \"3DES\", \"DES\", \"BLOWFISH\", \"RC4\", \"SHA-256\", \"SHA-384\", \"SHA-512\", \"SHA-3\"",
+    "name": "SHA-384",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "384",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 30,
+    "snippet": "\"AES\", \"CHACHA20\", \"3DES\", \"DES\", \"BLOWFISH\", \"RC4\", \"SHA-256\", \"SHA-384\", \"SHA-512\", \"SHA-3\"",
+    "name": "SHA-512",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "512",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 30,
+    "snippet": "\"AES\", \"CHACHA20\", \"3DES\", \"DES\", \"BLOWFISH\", \"RC4\", \"SHA-256\", \"SHA-384\", \"SHA-512\", \"SHA-3\"",
+    "name": "SHA-3",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 140,
+    "snippet": "md.append(f\"| **Classical Symmetric / Hashing** | **{summary['symmetric_count']}** | \ud83d\udfe1 Classical Security (Requires AES-",
+    "name": "AES-256-GCM",
+    "primitive": "block-cipher",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 140,
+    "snippet": "md.append(f\"| **Classical Symmetric / Hashing** | **{summary['symmetric_count']}** | \ud83d\udfe1 Classical Security (Requires AES-",
+    "name": "SHA-256",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 149,
+    "snippet": "std = \"NIST FIPS 203 (ML-KEM)\" if \"KEM\" in asset[\"algorithm\"].upper() or \"KYBER\" in asset[\"algorithm\"].upper() else \\",
+    "name": "ML-KEM-768",
+    "primitive": "kem",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 203"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 150,
+    "snippet": "\"NIST FIPS 204 (ML-DSA)\" if \"DSA\" in asset[\"algorithm\"].upper() or \"DILITHIUM\" in asset[\"algorithm\"].upper() else \\",
+    "name": "ML-DSA-65",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 204"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 151,
+    "snippet": "\"NIST FIPS 205 (SLH-DSA)\" if \"SLH\" in asset[\"algorithm\"].upper() or \"SPHINCS\" in asset[\"algorithm\"].upper() else \\",
+    "name": "SLH-DSA",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 205"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 152,
+    "snippet": "\"Stateful Hash (RFC 8554/8391)\" if \"LMS\" in asset[\"algorithm\"].upper() or \"XMSS\" in asset[\"algorithm\"].upper() else \"PQC",
+    "name": "Stateful-Hash-Signature",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "RFC 8554/8391"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 165,
+    "snippet": "recom = \"ML-KEM-768 / Kyber (FIPS 203)\" if any(k in algo_u for k in [\"RSA\", \"DH\", \"ECDH\", \"X25519\"]) and \"SIGN\" not in a",
+    "name": "ML-KEM-768",
+    "primitive": "kem",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 203"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 165,
+    "snippet": "recom = \"ML-KEM-768 / Kyber (FIPS 203)\" if any(k in algo_u for k in [\"RSA\", \"DH\", \"ECDH\", \"X25519\"]) and \"SIGN\" not in a",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 165,
+    "snippet": "recom = \"ML-KEM-768 / Kyber (FIPS 203)\" if any(k in algo_u for k in [\"RSA\", \"DH\", \"ECDH\", \"X25519\"]) and \"SIGN\" not in a",
+    "name": "ECDH-X25519",
+    "primitive": "key-agreement",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "25519",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 166,
+    "snippet": "\"ML-DSA-65 / Dilithium (FIPS 204)\" if any(k in algo_u for k in [\"ECDSA\", \"ED25519\", \"DSA\"]) or \"SIGN\" in asset[\"primitiv",
+    "name": "ML-DSA-65",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 204"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 166,
+    "snippet": "\"ML-DSA-65 / Dilithium (FIPS 204)\" if any(k in algo_u for k in [\"ECDSA\", \"ED25519\", \"DSA\"]) or \"SIGN\" in asset[\"primitiv",
+    "name": "ECDSA-P256",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "secp256r1",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 166,
+    "snippet": "\"ML-DSA-65 / Dilithium (FIPS 204)\" if any(k in algo_u for k in [\"ECDSA\", \"ED25519\", \"DSA\"]) or \"SIGN\" in asset[\"primitiv",
+    "name": "Ed25519",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "25519",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 167,
+    "snippet": "\"ML-KEM (KEM) or ML-DSA (Signatures)\"",
+    "name": "ML-KEM-768",
+    "primitive": "kem",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 203"
+  },
+  {
+    "file": "scripts/analyze_cbom.py",
+    "line": 167,
+    "snippet": "\"ML-KEM (KEM) or ML-DSA (Signatures)\"",
+    "name": "ML-DSA-65",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 204"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 22,
+    "snippet": "{\"pattern\": r\"\\b(?:ML[-_]?KEM[-_]?(?:512|768|1024)?|KYBER(?:512|768|1024)?)\\b\", \"name\": \"ML-KEM-768\", \"primitive\": \"kem\"",
+    "name": "ML-KEM-768",
+    "primitive": "kem",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 203"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 23,
+    "snippet": "{\"pattern\": r\"\\b(?:ML[-_]?DSA[-_]?(?:44|65|87)?|DILITHIUM[235]?)\\b\", \"name\": \"ML-DSA-65\", \"primitive\": \"signature\", \"pqc",
+    "name": "ML-DSA-65",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 204"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 24,
+    "snippet": "{\"pattern\": r\"\\b(?:SLH[-_]?DSA|SPHINCS\\+?)\\b\", \"name\": \"SLH-DSA\", \"primitive\": \"signature\", \"pqc_status\": \"POST-QUANTUM ",
+    "name": "SLH-DSA",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "NIST FIPS 205"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 25,
+    "snippet": "{\"pattern\": r\"\\b(?:LMS|XMSS)\\b\", \"name\": \"Stateful-Hash-Signature\", \"primitive\": \"signature\", \"pqc_status\": \"POST-QUANTU",
+    "name": "Stateful-Hash-Signature",
+    "primitive": "signature",
+    "pqc_status": "POST-QUANTUM READY",
+    "parameter_set": "N/A",
+    "standard": "RFC 8554/8391"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 28,
+    "snippet": "{\"pattern\": r\"\\b(?:RSA[-_]?(?:1024|2048|3072|4096)?|rsa\\.generate_private_key|RSA\\.Create)\\b\", \"name\": \"RSA-2048\", \"prim",
+    "name": "RSA-2048",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "2048",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 29,
+    "snippet": "{\"pattern\": r\"\\b(?:ECDSA|secp256r1|prime256v1|P-256|ECDsa\\.Create)\\b\", \"name\": \"ECDSA-P256\", \"primitive\": \"signature\", \"",
+    "name": "ECDSA-P256",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "secp256r1",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 30,
+    "snippet": "{\"pattern\": r\"\\b(?:ECDH|X25519|curve25519)\\b\", \"name\": \"ECDH-X25519\", \"primitive\": \"key-agreement\", \"pqc_status\": \"QUANT",
+    "name": "ECDH-X25519",
+    "primitive": "key-agreement",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "25519",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 31,
+    "snippet": "{\"pattern\": r\"\\b(?:Ed25519|Ed448)\\b\", \"name\": \"Ed25519\", \"primitive\": \"signature\", \"pqc_status\": \"QUANTUM-VULNERABLE\", \"",
+    "name": "Ed25519",
+    "primitive": "signature",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "25519",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 32,
+    "snippet": "{\"pattern\": r\"\\b(?:Diffie[-_ ]?Hellman|DHE-)\\b\", \"name\": \"Diffie-Hellman\", \"primitive\": \"key-agreement\", \"pqc_status\": \"",
+    "name": "Diffie-Hellman",
+    "primitive": "key-agreement",
+    "pqc_status": "QUANTUM-VULNERABLE",
+    "parameter_set": "N/A",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 35,
+    "snippet": "{\"pattern\": r\"\\b(?:AES[-_]?(?:128|192|256)?[-_]?(?:GCM|CBC|CTR)?|createCipheriv\\(['\\\"]aes|Aes\\.Create)\\b\", \"name\": \"AES-",
+    "name": "AES-256-GCM",
+    "primitive": "block-cipher",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 36,
+    "snippet": "{\"pattern\": r\"\\b(?:CHACHA20[-_]?POLY1305|chacha20)\\b\", \"name\": \"ChaCha20-Poly1305\", \"primitive\": \"stream-cipher\", \"pqc_s",
+    "name": "ChaCha20-Poly1305",
+    "primitive": "stream-cipher",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 37,
+    "snippet": "{\"pattern\": r\"\\b(?:SHA[-_]?256|sha256|createHash\\(['\\\"]sha256)\\b\", \"name\": \"SHA-256\", \"primitive\": \"hash\", \"pqc_status\":",
+    "name": "SHA-256",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 38,
+    "snippet": "{\"pattern\": r\"\\b(?:SHA[-_]?384|sha384)\\b\", \"name\": \"SHA-384\", \"primitive\": \"hash\", \"pqc_status\": \"CLASSICAL/SYMMETRIC\", ",
+    "name": "SHA-384",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "384",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 39,
+    "snippet": "{\"pattern\": r\"\\b(?:SHA[-_]?512|sha512)\\b\", \"name\": \"SHA-512\", \"primitive\": \"hash\", \"pqc_status\": \"CLASSICAL/SYMMETRIC\", ",
+    "name": "SHA-512",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "512",
+    "standard": "Classical"
+  },
+  {
+    "file": "scripts/scan_crypto_ast.py",
+    "line": 40,
+    "snippet": "{\"pattern\": r\"\\b(?:SHA[-_]?3|sha3)\\b\", \"name\": \"SHA-3\", \"primitive\": \"hash\", \"pqc_status\": \"CLASSICAL/SYMMETRIC\", \"param",
+    "name": "SHA-3",
+    "primitive": "hash",
+    "pqc_status": "CLASSICAL/SYMMETRIC",
+    "parameter_set": "256",
+    "standard": "Classical"
+  }
+]
