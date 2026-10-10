@@ -6006,7 +6006,12 @@
       "evidence": {
         "occurrences": [
           {
-            "location": "parse_cbom.py:83"
+            "location": "pqc_hybrid_service.py:30",
+            "snippet": "self.kem_algorithm = \"ML-KEM-768\""
+          },
+          {
+            "location": "pqc_hybrid_service.py:50",
+            "snippet": "pqc_ciphertext = os.urandom(1088)  # ML-KEM-768 ciphertext length"
           }
         ]
       }
@@ -6026,7 +6031,12 @@
       "evidence": {
         "occurrences": [
           {
-            "location": "parse_cbom.py:83"
+            "location": "pqc_hybrid_service.py:31",
+            "snippet": "self.dsa_algorithm = \"ML-DSA-65\""
+          },
+          {
+            "location": "pqc_hybrid_service.py:77",
+            "snippet": "pqc_sig = os.urandom(3309)  # ML-DSA-65 signature length"
           }
         ]
       }
@@ -6044,11 +6054,7 @@
         }
       },
       "evidence": {
-        "occurrences": [
-          {
-            "location": "parse_cbom.py:83"
-          }
-        ]
+        "occurrences": []
       }
     },
     {
@@ -6064,11 +6070,7 @@
         }
       },
       "evidence": {
-        "occurrences": [
-          {
-            "location": "parse_cbom.py:83"
-          }
-        ]
+        "occurrences": []
       }
     },
     {
@@ -6086,7 +6088,12 @@
       "evidence": {
         "occurrences": [
           {
-            "location": "parse_cbom.py:84"
+            "location": "pqc_hybrid_service.py:36",
+            "snippet": "self.legacy_sig_algorithm = \"RSA-2048\""
+          },
+          {
+            "location": "pqc_hybrid_service.py:80",
+            "snippet": "legacy_sig = os.urandom(256)  # 2048-bit RSA signature"
           }
         ]
       }
@@ -6106,7 +6113,8 @@
       "evidence": {
         "occurrences": [
           {
-            "location": "parse_cbom.py:84"
+            "location": "pqc_hybrid_service.py:37",
+            "snippet": "self.legacy_ecdsa_curve = \"ECDSA-P256\""
           }
         ]
       }
@@ -6126,7 +6134,8 @@
       "evidence": {
         "occurrences": [
           {
-            "location": "parse_cbom.py:84"
+            "location": "pqc_hybrid_service.py:38",
+            "snippet": "self.legacy_ecdh_curve = \"X25519\""
           }
         ]
       }
@@ -6144,11 +6153,7 @@
         }
       },
       "evidence": {
-        "occurrences": [
-          {
-            "location": "parse_cbom.py:84"
-          }
-        ]
+        "occurrences": []
       }
     },
     {
@@ -6164,11 +6169,7 @@
         }
       },
       "evidence": {
-        "occurrences": [
-          {
-            "location": "parse_cbom.py:84"
-          }
-        ]
+        "occurrences": []
       }
     },
     {
@@ -6187,6 +6188,14 @@
         "occurrences": [
           {
             "location": "pqc_hybrid_service.py:13"
+          },
+          {
+            "location": "pqc_hybrid_service.py:41",
+            "snippet": "self.bulk_cipher = \"AES-256-GCM\""
+          },
+          {
+            "location": "pqc_hybrid_service.py:61",
+            "snippet": "session_key = h.digest()[:32]  # 256-bit AES key"
           }
         ]
       }
@@ -6227,6 +6236,14 @@
         "occurrences": [
           {
             "location": "pqc_hybrid_service.py:14"
+          },
+          {
+            "location": "pqc_hybrid_service.py:42",
+            "snippet": "self.hash_digest = \"SHA-384\""
+          },
+          {
+            "location": "pqc_hybrid_service.py:58",
+            "snippet": "h = hashlib.sha384()"
           }
         ]
       }
