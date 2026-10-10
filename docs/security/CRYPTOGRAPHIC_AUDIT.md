@@ -30,6 +30,6 @@
 
 | Component Name | Primitive | Key Length | Quantum Resistance Assessment | Location(s) |
 |---|---|---|---|---|
-| `private-key@6e1dfcf9-fa85-4a90-8f43-a551d287fce1` | unknown | N/A | Review key length for Grover resistance | `python_test/ssl_test.py` |
+| `private-key@6a4f2146-df32-4fe8-929e-0ec7541320b8` | unknown | N/A | Review key length for Grover resistance | `python_test/ssl_test.py` |
 | `AES-256-GCM` | block-cipher | 256 | Quantum-Resistant (Grover's proof) | `pqc_hybrid_service.py:41`<br>`pqc_hybrid_service.py:61` |
 | `SHA-384` | hash | 384 | Quantum-Resistant (Grover's proof) | `pqc_hybrid_service.py:42`<br>`pqc_hybrid_service.py:58` |
