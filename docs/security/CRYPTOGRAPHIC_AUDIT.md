@@ -40,7 +40,7 @@
 
 | Component Name | Primitive | Key Length | Quantum Resistance Assessment | Provenance / Location(s) |
 |---|---|---|---|---|
-| `private-key@5eaf240c-1759-49fb-94c8-1a91d178d515` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python_test/ssl_test.py` |
+| `private-key@4756844b-4183-4d98-ac36-943492e3acb4` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python_test/ssl_test.py` |
 | `AES-256-GCM` | block-cipher | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`pqc_hybrid_service.py:41`<br>`pqc_hybrid_service.py:61` |
 | `SHA-384` | hash | 384 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`pqc_hybrid_service.py:42`<br>`pqc_hybrid_service.py:58` |
 
