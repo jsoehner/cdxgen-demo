@@ -1,6 +1,6 @@
 ## 🛡️ Cryptographic Bill of Materials (CBOM) & PQC Migration Assessment
 
-**Format**: CycloneDX (v1.7) | **First-Party Code Crypto Assets**: 85 | **Total Tracked Crypto Assets**: 14
+**Format**: CycloneDX (v1.7) | **First-Party Code Crypto Assets**: 83 | **Total Tracked Crypto Assets**: 12
 
 ### 📊 Post-Quantum Migration Scorecard
 
@@ -8,7 +8,7 @@
 |---|---|---|
 | **Post-Quantum Ready (PQC)** | **3** | 🟢 Quantum-Resistant (NIST FIPS 203/204/205) |
 | **Quantum-Vulnerable (Backlog)** | **5** | 🔴 At Risk of 'Harvest Now, Decrypt Later' |
-| **Classical Symmetric / Digest** | **6** | 🟡 Classical Security (Requires AES-256 / SHA-256+) |
+| **Classical Symmetric / Digest** | **4** | 🟡 Classical Security (Requires AES-256 / SHA-256+) |
 | **Asymmetric PQC Migration Progress** | **37.5%** | (3 of 8 asymmetric primitives migrated) |
 
 ### 🎯 Cryptographic Supply Chain Coverage & Confidence
@@ -47,8 +47,6 @@
 | `AES-256-GCM` | block-cipher | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`pqc_hybrid_service.py:13`<br>`pqc_hybrid_service.py:41`<br>`pqc_hybrid_service.py:61` |
 | `SHA-256` | hash | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`pqc_hybrid_service.py:14` |
 | `SHA-384` | hash | 384 | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`pqc_hybrid_service.py:14`<br>`pqc_hybrid_service.py:42`<br>`pqc_hybrid_service.py:58` |
-| `ChaCha20-Poly1305` | stream-cipher | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`scripts/analyze_cbom.py:30` |
-| `SHA-512` | hash | 512 | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`scripts/analyze_cbom.py:30` |
 
 ### ⚠️ Unassimilated Third-Party Binaries & Cryptographic Blind Spots
 

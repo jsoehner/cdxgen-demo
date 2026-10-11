@@ -196,5 +196,16 @@ When working with CBoMs and these utilities, keep the following in mind:
 
 ## 🛡️ Security & Cryptographic Posture
 This project tracks Software & Cryptographic Bill of Materials (SBOM & CBOM) and Post-Quantum Cryptography (PQC) readiness.
-- 📊 **Audit Report**: See the latest [Cryptographic Audit & PQC Migration Report](docs/security/CRYPTOGRAPHIC_AUDIT.md).
+
+| Metric | Status / Value | Standard / Target |
+| :--- | :--- | :--- |
+| **BOM Format** | CycloneDX v1.7 | OWASP CycloneDX CBOM Specification |
+| **PQC Migration Progress** | **37.5%** | NIST FIPS 203 / 204 / 205 |
+| **Post-Quantum Ready Assets** | **3** (`ML-KEM-768`, `ML-DSA-65`, `SLH-DSA`) | Quantum-Resistant Algorithms |
+| **Quantum-Vulnerable Backlog** | **5** (`RSA-2048`, `ECDSA-P256`, `ECDH-X25519`, `Ed25519`, `DH`) | Harvest-Now-Decrypt-Later Backlog |
+| **Classical Symmetric / Digests** | **4** (`AES-256-GCM`, `SHA-256`, `SHA-384`, `Stateful-Hash`) | Grover Resistance Verified |
+| **First-Party Code Coverage** | **100% AST Reconciled** | Zero unvetted custom crypto |
+
+- 📊 **Detailed Audit Report**: See the latest [Cryptographic Audit & PQC Migration Report](docs/security/CRYPTOGRAPHIC_AUDIT.md).
 - 📜 **Policy Standard**: Governed by the [Hybrid Post-Quantum Cryptography Migration and CBOM Audit Standard](file:///home/jsoehner/memory_system/knowledge/okf/cbom_pqc_migration_and_hybrid_cryptography_standard.md).
+

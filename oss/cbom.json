@@ -6247,46 +6247,6 @@
           }
         ]
       }
-    },
-    {
-      "type": "cryptographic-asset",
-      "name": "ChaCha20-Poly1305",
-      "cryptoProperties": {
-        "assetType": "algorithm",
-        "algorithmProperties": {
-          "name": "ChaCha20",
-          "primitive": "stream-cipher",
-          "parameterSetIdentifier": "256",
-          "executionEnvironment": "software-plain-ram"
-        }
-      },
-      "evidence": {
-        "occurrences": [
-          {
-            "location": "scripts/analyze_cbom.py:30"
-          }
-        ]
-      }
-    },
-    {
-      "type": "cryptographic-asset",
-      "name": "SHA-512",
-      "cryptoProperties": {
-        "assetType": "algorithm",
-        "algorithmProperties": {
-          "name": "SHA",
-          "primitive": "hash",
-          "parameterSetIdentifier": "512",
-          "executionEnvironment": "software-plain-ram"
-        }
-      },
-      "evidence": {
-        "occurrences": [
-          {
-            "location": "scripts/analyze_cbom.py:30"
-          }
-        ]
-      }
     }
   ],
   "services": [],
