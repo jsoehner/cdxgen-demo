@@ -102,10 +102,63 @@ A bash script that orchestrates the generation of a CBoM from a Docker container
 ./demo.sh -e tomcat:latest
 ```
 
+### 4. Enterprise SBOM & CBOM Automation Pipeline (`scripts/`)
+A production-ready suite of automation, analysis, and verification scripts:
+
+- **`scripts/generate_boms.sh`**: Generates both standard SBOM (`sbom.cyclonedx.json`) and cryptographic bill of materials (`cbom.json`) for source repositories or container images. Supports OCI 1.1 referrer discovery and automatic fallback to `npx @cyclonedx/cdxgen`.
+  ```bash
+  # Scan current source repository
+  bash scripts/generate_boms.sh .
+
+  # Scan a container image
+  bash scripts/generate_boms.sh -t docker my-app:latest
+  ```
+
+- **`scripts/analyze_cbom.py`**: Analyzes generated CBOMs against standard software inventories, evaluating:
+  - **PQC Readiness**: Identifies quantum-vulnerable primitives (RSA, ECDSA, ECDH) vs migrated NIST standards (ML-KEM-768, ML-DSA-65, SLH-DSA).
+  - **Grover Resistance**: Verifies symmetric key lengths (AES-256, SHA-384+).
+  - **Supply Chain Confidence**: Quantifies verified dependencies vs unassimilated supply chain blind spots.
+  - **OS Inventory Verification**: Tracks system-level cryptographic packages.
+  ```bash
+  python3 scripts/analyze_cbom.py oss/cbom.json --sbom oss/sbom.cyclonedx.json --markdown docs/security/CRYPTOGRAPHIC_AUDIT.md
+  ```
+
+- **`scripts/scan_crypto_ast.py`**: Performs dual-engine semantic AST scanning across Python, JavaScript/TypeScript, Go, Java, Rust, C#, and C/C++ source code to discover cryptographic call sites and reconcile them 100% against the CBOM.
+  ```bash
+  python3 scripts/scan_crypto_ast.py . --cbom oss/cbom.json
+  ```
+
+- **`scripts/test_boms.sh`**: Automated verification test harness asserting JSON syntax, CycloneDX schema conformance, and non-empty crypto asset discovery.
+  ```bash
+  bash scripts/test_boms.sh oss
+  ```
+
+- **`scripts/update_os_inventory.py`**: Scans host OS package managers (`dpkg`, `rpm`) for installed cryptographic runtime components and updates `known_cbom_catalog.json`.
+  ```bash
+  python3 scripts/update_os_inventory.py
+  ```
+
+- **`scripts/fetch_oci_cbom.py` & `scripts/attach_oci_bom.sh`**: Query OCI 1.1 referrers without pulling image layers, and attach generated CBOM artifacts to OCI registries via ORAS.
+  ```bash
+  python3 scripts/fetch_oci_cbom.py <IMAGE_REF> -o oss/upstream_cbom.json
+  bash scripts/attach_oci_bom.sh oss/cbom.json <IMAGE_REF>
+  ```
+
+### 5. `pqc_hybrid_service.py`
+Demonstration of a hybrid Post-Quantum Cryptographic service architecture designed for transition-era systems:
+- **Quantum-Resistant Key Encapsulation**: Uses **ML-KEM-768** (NIST FIPS 203) combined with classical **ECDH-X25519** via SHA-384 key derivation to establish **AES-256-GCM** session encryption.
+- **Dual Digital Signatures**: Signs transactions simultaneously using **ML-DSA-65** (NIST FIPS 204) and legacy **RSA-2048** / **ECDSA-P256** for backwards compatibility.
+
+```bash
+python3 pqc_hybrid_service.py
+```
+
 ## Features
 - **PQC Readiness Identification**: Easily audit your software components and cryptographic assets for classical algorithms that are vulnerable to quantum computing threats.
+- **Dual-Engine AST Scanning**: Validates first-party cryptographic usage in source code directly against the generated CBOM inventory.
 - **Deep CycloneDX Inspection**: Extracts embedded cryptography metadata, such as algorithm strength, trust domains, and CA root attributes.
 - **GPG Key Primitive Extraction**: Translates raw GPG algorithm IDs and elliptic curve parameters into human-readable primitive strings.
+- **CI/CD Integration**: Pre-configured GitHub Actions workflow (`.github/workflows/sbom.yml`) to automatically generate, verify, and track BOM artifacts on push and PR.
 
 ## Advanced Example: Carving Artifacts from Container Images
 
@@ -142,4 +195,6 @@ When working with CBoMs and these utilities, keep the following in mind:
 
 
 ## 🛡️ Security & Cryptographic Posture
-This project tracks Software & Cryptographic Bill of Materials (SBOM & CBOM) and Post-Quantum Cryptography (PQC) readiness. See the latest [Cryptographic Audit & PQC Migration Report](docs/security/CRYPTOGRAPHIC_AUDIT.md).
+This project tracks Software & Cryptographic Bill of Materials (SBOM & CBOM) and Post-Quantum Cryptography (PQC) readiness.
+- 📊 **Audit Report**: See the latest [Cryptographic Audit & PQC Migration Report](docs/security/CRYPTOGRAPHIC_AUDIT.md).
+- 📜 **Policy Standard**: Governed by the [Hybrid Post-Quantum Cryptography Migration and CBOM Audit Standard](file:///home/jsoehner/memory_system/knowledge/okf/cbom_pqc_migration_and_hybrid_cryptography_standard.md).

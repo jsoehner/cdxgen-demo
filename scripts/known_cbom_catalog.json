@@ -101,6 +101,592 @@
       "confidence": "HIGH",
       "source": "Verified Cryptographically Inert",
       "cryptoAssets": []
+    },
+    {
+      "name": "openssl",
+      "purlPattern": "^pkg:(deb|rpm|apk|generic)/(debian|ubuntu|alpine|fedora|redhat|arch)?/?openssl(@.*)?$",
+      "category": "system-library",
+      "confidence": "HIGH",
+      "source": "OpenSSL Project Specification (FIPS 140-3 / Post-Quantum Provider)",
+      "cryptoAssets": [
+        {
+          "name": "OpenSSL TLS / EVP Public Key Engine",
+          "primitive": "protocol",
+          "algorithm": "TLS 1.3 / X25519 / RSA / ECDSA",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "RSA-2048 / 4096 / P-256 / X25519",
+          "remediation": "Upgrade OpenSSL to 3.4+ and enable oqs-provider for ML-KEM-768 hybrid key exchange"
+        },
+        {
+          "name": "OpenSSL Symmetric Crypto & Hashes",
+          "primitive": "block-cipher",
+          "algorithm": "AES-256-GCM / SHA-256 / SHA-512",
+          "pqc_status": "CLASSICAL/SYMMETRIC",
+          "key_length": "256",
+          "remediation": "Quantum-Resistant against Grover's algorithm"
+        }
+      ]
+    },
+    {
+      "name": "libssl3",
+      "purlPattern": "^pkg:(deb|ubuntu|debian)/libssl3(@.*)?$",
+      "category": "system-library",
+      "confidence": "HIGH",
+      "source": "Debian/Ubuntu OpenSSL Runtime Package",
+      "cryptoAssets": [
+        {
+          "name": "libssl3 TLS Engine",
+          "primitive": "protocol",
+          "algorithm": "TLS 1.2 / TLS 1.3",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "X25519 / P-256 / RSA-2048",
+          "remediation": "Deploy ML-KEM enabled provider"
+        }
+      ]
+    },
+    {
+      "name": "libcrypto3",
+      "purlPattern": "^pkg:(deb|apk|rpm)/.*libcrypto.*(@.*)?$",
+      "category": "system-library",
+      "confidence": "HIGH",
+      "source": "Linux Distribution Crypto Engine",
+      "cryptoAssets": [
+        {
+          "name": "libcrypto Core Primitives",
+          "primitive": "block-cipher",
+          "algorithm": "AES-256-GCM",
+          "pqc_status": "CLASSICAL/SYMMETRIC",
+          "key_length": "256",
+          "remediation": "Quantum-Resistant against Grover"
+        }
+      ]
+    },
+    {
+      "name": "ca-certificates",
+      "purlPattern": "^pkg:(deb|rpm|apk|generic)/.*ca-certificates.*(@.*)?$",
+      "category": "pki-trust-store",
+      "confidence": "HIGH",
+      "source": "Mozilla Root CA Certificate Bundle",
+      "cryptoAssets": [
+        {
+          "name": "Mozilla Root CA Store (RSA / ECDSA Trust Anchors)",
+          "primitive": "certificate",
+          "algorithm": "RSA-2048 / 4096 / ECDSA P-256 / P-384",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "2048-4096",
+          "remediation": "Transition to ML-DSA (FIPS 204) and SLH-DSA (FIPS 205) root authority trust anchors"
+        }
+      ]
+    },
+    {
+      "name": "nginx",
+      "purlPattern": "^pkg:(deb|rpm|apk|docker|oci)/.*nginx.*(@.*)?$",
+      "category": "web-server",
+      "confidence": "HIGH",
+      "source": "NGINX SSL/TLS Engine",
+      "cryptoAssets": [
+        {
+          "name": "NGINX SSL Termination Engine",
+          "primitive": "protocol",
+          "algorithm": "TLS 1.2 / TLS 1.3",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "ECDH-X25519 / RSA-2048",
+          "remediation": "Compile with BoringSSL/OpenSSL 3.4+ supporting X25519MLKEM768 key exchange"
+        }
+      ]
+    },
+    {
+      "name": "envoy",
+      "purlPattern": "^pkg:(docker|oci|generic)/.*envoy.*(@.*)?$",
+      "category": "service-mesh-proxy",
+      "confidence": "HIGH",
+      "source": "Envoy Proxy BoringSSL TLS Stack",
+      "cryptoAssets": [
+        {
+          "name": "Envoy BoringSSL TLS Termination",
+          "primitive": "protocol",
+          "algorithm": "TLS 1.3 / X25519MLKEM768",
+          "pqc_status": "POST-QUANTUM READY",
+          "key_length": "X25519+ML-KEM-768",
+          "remediation": "Post-Quantum hybrid key exchange active"
+        }
+      ]
+    },
+    {
+      "name": "curl",
+      "purlPattern": "^pkg:(deb|rpm|apk|generic)/.*curl.*(@.*)?$",
+      "category": "http-client",
+      "confidence": "HIGH",
+      "source": "cURL TLS Backend Specification",
+      "cryptoAssets": [
+        {
+          "name": "cURL TLS Transport Client",
+          "primitive": "protocol",
+          "algorithm": "TLS 1.2 / 1.3",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "ECDHE / RSA",
+          "remediation": "Ensure underlying libcurl backend supports hybrid post-quantum groups"
+        }
+      ]
+    },
+    {
+      "name": "crypto-policies",
+      "purlPattern": "^pkg:os:crypto-policies$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "crypto-policies Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "xmlsec1-openssl",
+      "purlPattern": "^pkg:os:xmlsec1-openssl$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "xmlsec1-openssl Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "perl-Net-SSLeay",
+      "purlPattern": "^pkg:os:perl-Net-SSLeay$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "perl-Net-SSLeay Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "perl-IO-Socket-SSL",
+      "purlPattern": "^pkg:os:perl-IO-Socket-SSL$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "perl-IO-Socket-SSL Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "crypto-policies-scripts",
+      "purlPattern": "^pkg:os:crypto-policies-scripts$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "crypto-policies-scripts Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "fuse-sshfs",
+      "purlPattern": "^pkg:os:fuse-sshfs$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "fuse-sshfs Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "pkcs11-helper",
+      "purlPattern": "^pkg:os:pkcs11-helper$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "pkcs11-helper Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "qca-qt6-ossl",
+      "purlPattern": "^pkg:os:qca-qt6-ossl$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "qca-qt6-ossl Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "gnutls",
+      "purlPattern": "^pkg:os:gnutls$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "gnutls Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "libssh-config",
+      "purlPattern": "^pkg:os:libssh-config$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "libssh-config Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "libssh",
+      "purlPattern": "^pkg:os:libssh$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "libssh Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "ngtcp2-crypto-ossl",
+      "purlPattern": "^pkg:os:ngtcp2-crypto-ossl$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "ngtcp2-crypto-ossl Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "libblockdev-crypto",
+      "purlPattern": "^pkg:os:libblockdev-crypto$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "libblockdev-crypto Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "gnutls-dane",
+      "purlPattern": "^pkg:os:gnutls-dane$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "gnutls-dane Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "ngtcp2-crypto-gnutls",
+      "purlPattern": "^pkg:os:ngtcp2-crypto-gnutls$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "ngtcp2-crypto-gnutls Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "libssh2",
+      "purlPattern": "^pkg:os:libssh2$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "libssh2 Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "openssh",
+      "purlPattern": "^pkg:os:openssh$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "openssh Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "openssh-server",
+      "purlPattern": "^pkg:os:openssh-server$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "openssh-server Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "openssh-clients",
+      "purlPattern": "^pkg:os:openssh-clients$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "openssh-clients Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "openssh-askpass",
+      "purlPattern": "^pkg:os:openssh-askpass$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "openssh-askpass Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "java-25-openjdk-crypto-adapter",
+      "purlPattern": "^pkg:os:java-25-openjdk-crypto-adapter$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "java-25-openjdk-crypto-adapter Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "python3-cryptography",
+      "purlPattern": "^pkg:os:python3-cryptography$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "python3-cryptography Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "ca-certificates",
+      "purlPattern": "^pkg:os:ca-certificates$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "ca-certificates Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "ksshaskpass",
+      "purlPattern": "^pkg:os:ksshaskpass$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "ksshaskpass Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "python3-jwcrypto",
+      "purlPattern": "^pkg:os:python3-jwcrypto$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "python3-jwcrypto Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "openssl-libs",
+      "purlPattern": "^pkg:os:openssl-libs$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "openssl-libs Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
+    },
+    {
+      "name": "openssl",
+      "purlPattern": "^pkg:os:openssl$",
+      "category": "os-runtime",
+      "confidence": "HIGH",
+      "source": "OS Inventory Update",
+      "cryptoAssets": [
+        {
+          "name": "openssl Crypto Primitives",
+          "primitive": "library",
+          "algorithm": "Various",
+          "pqc_status": "QUANTUM-VULNERABLE",
+          "key_length": "Varies",
+          "remediation": "Ensure package is updated to latest version supporting ML-KEM"
+        }
+      ]
     }
   ]
 }
