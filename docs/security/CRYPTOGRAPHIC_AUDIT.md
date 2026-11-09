@@ -16,8 +16,8 @@
 | Evaluation Layer | Coverage / Status | Audit Confidence Assessment |
 |---|---|---|
 | **First-Party Code (`src/`)** | **100% Audited** (0 Custom Primitives) | 🟢 **HIGH** (Direct AST & SAST verified clean) |
-| **Third-Party Supply Chain** | **0.0%** (0 of 82 dependencies cataloged) | 🔴 LOW (Known profiles assimilated) |
-| **Overall Audit Confidence Score** | **1.2%** | 🔴 LOW (82 unassimilated supply chain dependencies) |
+| **Third-Party Supply Chain** | **0.0%** (0 of 83 dependencies cataloged) | 🔴 LOW (Known profiles assimilated) |
+| **Overall Audit Confidence Score** | **1.2%** | 🔴 LOW (83 unassimilated supply chain dependencies) |
 
 | **System OS Inventory** | **Active & Updated** | 🟢 **High Integrity** (Local OS crypto components cataloged) |
 
@@ -40,7 +40,7 @@
 
 | Component Name | Primitive | Key Length | Quantum Resistance Assessment | Provenance / Location(s) |
 |---|---|---|---|---|
-| `private-key@a106f038-3b78-45b7-bda1-7c12065b765f` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python_test/ssl_test.py` |
+| `private-key@7df628a6-2bf5-415c-a879-f3bedcf0105c` | unknown | N/A | Review key length for Grover resistance | First-Party Code (SAST/AST)<br>`python_test/ssl_test.py` |
 | `AES-256-GCM` | block-cipher | 256 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`pqc_hybrid_service.py:41`<br>`pqc_hybrid_service.py:61` |
 | `SHA-384` | hash | 384 | Quantum-Resistant (Grover's proof) | First-Party Code (SAST/AST)<br>`pqc_hybrid_service.py:42`<br>`pqc_hybrid_service.py:58` |
 
@@ -58,11 +58,11 @@
 | `actions/upload-artifact` | v4.6.2 | `pkg:github/actions/upload-artifact@v4.6.2` | 🟡 Unassimilated (No upstream CBOM) |
 | `anchore/sbom-action` | v0.24.2 | `pkg:github/anchore/sbom-action@v0.24.2` | 🟡 Unassimilated (No upstream CBOM) |
 | `aquasecurity/trivy-action` | v0.35.0 | `pkg:github/aquasecurity/trivy-action@v0.35.0` | 🟡 Unassimilated (No upstream CBOM) |
-| `body-parser` | 2.3.0 | `pkg:npm/body-parser@2.3.0` | 🟡 Unassimilated (No upstream CBOM) |
+| `body-parser` | 2.4.0 | `pkg:npm/body-parser@2.4.0` | 🟡 Unassimilated (No upstream CBOM) |
 | `bytes` | 3.1.2 | `pkg:npm/bytes@3.1.2` | 🟡 Unassimilated (No upstream CBOM) |
 | `call-bind-apply-helpers` | 1.0.2 | `pkg:npm/call-bind-apply-helpers@1.0.2` | 🟡 Unassimilated (No upstream CBOM) |
 | `call-bound` | 1.0.4 | `pkg:npm/call-bound@1.0.4` | 🟡 Unassimilated (No upstream CBOM) |
 | `cbomkit/cbomkit-action` | v2.3.0 | `pkg:github/cbomkit/cbomkit-action@v2.3.0` | 🟡 Unassimilated (No upstream CBOM) |
 | `content-disposition` | 1.1.0 | `pkg:npm/content-disposition@1.1.0` | 🟡 Unassimilated (No upstream CBOM) |
 | `content-type` | 1.0.5 | `pkg:npm/content-type@1.0.5` | 🟡 Unassimilated (No upstream CBOM) |
-| *... and 67 more unassimilated dependencies* | | | |
+| *... and 68 more unassimilated dependencies* | | | |
