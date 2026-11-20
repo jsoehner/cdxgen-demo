@@ -1,5 +1,7 @@
 # Cryptography Bill of Materials (CBoM) Utilities
 
+[![Build Verified](https://img.shields.io/badge/build%20verification-2026--11--20%20passed-brightgreen)](docs/BUILD_VERIFICATION.md)
+
 This repository contains utilities for generating, parsing, and evaluating Cryptography Bill of Materials (CBoM) in the CycloneDX format, as well as tools for identifying cryptographic primitives in GPG environments.
 
 ## Tools Overview
